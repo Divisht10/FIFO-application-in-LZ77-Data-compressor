@@ -1,5 +1,5 @@
 //==========================================================================
-// revised_async_fifo.v  -- Dual-clock (asynchronous) FIFO
+// revised_async_fifo.v  -- Dual-clock async FIFO
 //
 //  
 //  - CDC safety is guaranteed by free-running power-of-2 counters.
