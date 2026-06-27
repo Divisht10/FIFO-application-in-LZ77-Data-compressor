@@ -69,13 +69,15 @@ module tb_lz77_classic;
         repeat(3) @(negedge clk); rst_n=1; repeat(2) @(negedge clk);
 
         // abracadabra
-        begin reg [7:0] s[0:10]; integer m;
+        begin : tc_abra
+            reg [7:0] s[0:10]; integer m;
             s[0]="a";s[1]="b";s[2]="r";s[3]="a";s[4]="c";s[5]="a";s[6]="d";s[7]="a";s[8]="b";s[9]="r";s[10]="a";
             for (m=0;m<11;m=m+1) src[m]=s[m]; run_test("abracadabra",11);
         end
 
         // xyxyzyxyxyz
-        begin reg [7:0] s[0:10]; integer m;
+        begin : tc_xyz
+            reg [7:0] s[0:10]; integer m;
             s[0]="x";s[1]="y";s[2]="x";s[3]="y";s[4]="z";s[5]="y";s[6]="x";s[7]="y";s[8]="x";s[9]="y";s[10]="z";
             for (m=0;m<11;m=m+1) src[m]=s[m]; run_test("xyxyzyxyxyz",11);
         end
@@ -91,7 +93,7 @@ module tb_lz77_classic;
         for (j=0;j<200;j=j+1) src[j]=(j[0])?"b":"a"; run_test("abab_200",200);
 
         // text with repeats, longer than WINDOW (255) to exercise capped offset
-        begin
+        begin : tc_long
             reg [7:0] p[0:11]; integer m;
             p[0]="x";p[1]="y";p[2]="x";p[3]="y";p[4]="z";p[5]="y";p[6]="x";p[7]="y";p[8]="x";p[9]="y";p[10]="z";p[11]="_";
             for (j=0;j<1500;j=j+1) src[j]=p[j%12];
