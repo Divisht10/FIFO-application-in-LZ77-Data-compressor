@@ -1,9 +1,6 @@
 # FIFO-Based Hardware Implementation of an LZ77 Data Compressor
-**Author:** Divisht Dahiya ([@Divisht10](https://github.com/Divisht10))
-<!-- Add any co-authors here, e.g. Name, Name -->
-Guidance: <!-- Prof. Name -->
+**Authors:** Divisht Dahiya (IIT Gandhinagar), Aryan Mor(NIT Kurukshetra)
 
----
 
 ## Project Overview
 
